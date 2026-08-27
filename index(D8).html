@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form {
+            display: grid;
+            gap: 16px;
+            max-width: 500px;
+        }
+
+        form div {
+            display: grid;
+            grid-template-columns: 140px 1fr;
+            align-items: center;
+            gap: 8px;
+        }
+
+        input {
+            box-sizing: border-box;
+            width: 100%;
+            padding: 6px;
+        }
+
+        fieldset {
+            border: 0;
+            padding: 0;
+        }
+
+        fieldset legend {
+            padding: 0;
+            margin-bottom: 8px;
+        }
+
+        .option {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-right: 16px;
+        }
+
+        .option input {
+            width: auto;
+        }
+
+        .feedback-message {
+            align-items: start;
+        }
+
+        textarea {
+            box-sizing: border-box;
+            width: 100%;
+            padding: 6px;
+            resize: vertical;
+        }
+    </style>
+</head>
+<body>
+    <!--Task1-->
+    <h3>1. Student Registration Form</h3>
+    <form>
+        <div>
+            <label for="full-name">Full Name:</label>
+            <input id="full-name" type="text" placeholder="e.g., soham shrawankar" title="Required field" required>
+        </div>
+         <div>
+            <label for="email">Email:</label>
+            <input id="email" type="email" placeholder="e.g., soham@example.com" title="Required field" required>
+        </div>
+         <div>
+            <label for="password">Password:</label>
+            <input id="password" type="password" placeholder="At least 8 characters" title="Required field" required>
+        </div>
+         <div>
+            <label for="mobile-number">Mobile Number:</label>
+            <input id="mobile-number" type="tel" placeholder="e.g., 9876543210" title="Required field" required>
+        </div>
+         <div>
+            <label for="age">Age:</label>
+            <input id="age" type="number" placeholder="e.g., 20" title="Required field" required>
+        </div>
+         <div>
+            <label for="gender">Gender:</label>
+            <input id="gender" type="text" placeholder="e.g., Male, Female, or Other" title="Required field" required>
+        </div>
+         <div>
+            <label for="course">Course:</label>
+            <input id="course" type="text" placeholder="e.g., Web Development" title="Required field" required>
+        </div>
+         <div>
+            <label for="address">Address:</label>
+            <input id="address" type="text" placeholder="Enter your full address" title="Required field" required>
+        </div>
+         <div>
+            <label for="skills">Skills:</label>
+            <input id="skills" type="text" placeholder="e.g., HTML, CSS, JavaScript" title="Required field" required>
+        </div>
+        
+    </form>
+    <hr>
+
+  <!--Task2-->
+             <h3>2. Login Form</h3>
+    <form>
+        <div>
+            <label for="full-name">Username/Email:</label>
+            <input id="full-name" type="text" placeholder="e.g., Soham Shrawankar" title="Required field" required>
+        </div>
+         <div>
+            <label for="password">Password:</label>
+            <input id="password" type="password" placeholder="At least 8 characters" title="Required field" required>
+        </div>
+          <div>
+            <label for="remember me">Remember Me:</label>
+            <input id="remember me" type="checkbox" >
+        </div>
+
+        <div>
+            <button>Login</button>
+        </div>
+         <div>
+            <button>Reset</button>
+        </div>
+        </form>
+
+        <hr>
+
+        <!--task 3-->
+        <h3>3. Contact US form</h3> 
+        <form>
+             <div>
+            <label for="full-name">Full Name:</label>
+            <input id="full-name" type="text" placeholder="e.g., soham shrawankar" title="Required field" required>
+        </div>
+         <div>
+            <label for="email">Email:</label>
+            <input id="email" type="email" placeholder="e.g., soham@example.com" title="Required field" required>
+        </div>
+          <div>
+            <label for="mobile-number">Mobile Number:</label>
+            <input id="mobile-number" type="tel" placeholder="e.g., 9876543210" title="Required field" required>
+        </div>
+           <div>
+            <label for="subject">Subject:</label>
+            <input id="subject" type="text" placeholder="e.g., Web Development" title="Required field" required>
+        </div>
+        <div>
+            <label for="message">Message:</label>
+            <textarea id="message"textarea maxlength="100" rows="5" placeholder="e.g., Hello, I am XYZ!" title="Maximum 100 words" required></textarea>
+        </div>
+        <button type="submit">Submit</button>
+        </form>
+
+        <hr>
+       <!--Task4-->
+
+       <h3>4. FeedBack Form</h3> 
+
+       <form>
+        <div>
+            <label for="full-name"> Name:</label>
+            <input id="full-name" type="text" placeholder="e.g., soham shrawankar" title="Required field" required>
+        </div>
+         <div>
+            <label for="email">Email:</label>
+            <input id="email" type="email" placeholder="e.g., soham@example.com" title="Required field" required>
+        </div>
+        <fieldset>
+            <legend>Overall Experience:</legend>
+            <label class="option">
+                <input type="radio" name="feedback" value="Excellent" required>
+                Excellent
+            </label>
+            <label class="option">
+                <input type="radio" name="feedback" value="Good">
+                Good
+            </label>
+            <label class="option">
+                <input type="radio" name="feedback" value="Average">
+                Average
+            </label>
+            <label class="option">
+                <input type="radio" name="feedback" value="Poor">
+                Poor
+            </label>
+        </fieldset>
+
+        <fieldset>
+            <legend>Services Used:</legend>
+            <label class="option" for="web-development">
+                <input id="web-development" name="services" type="checkbox" value="Web development">
+                Web development
+            </label>
+            <label class="option" for="software-testing">
+                <input id="software-testing" name="services" type="checkbox" value="Software Testing">
+                Software Testing
+            </label>
+            <label class="option" for="system-design">
+                <input id="system-design" name="services" type="checkbox" value="System Design">
+                System Design
+            </label>
+        </fieldset>
+
+        <div class="feedback-message">
+            <label for="feedback-text">Text and Feedback here:</label>
+            <textarea id="textarea" name="feedback-text" rows="5" placeholder="Tell us about your experience" required></textarea>
+        </div>
+       </form>
+
+       <hr>
+
+       <!--task5-->
+
+       <h3>5. College Admission Form</h3>
+       <form>
+       
+        <fieldset>
+        <p><b>Personal Information</b></p> <br>
+        <div>
+            <label for="full-name">Full Name:</label>
+            <input id="full-name" type="text" placeholder="e.g., soham shrawankar" title="Required field" required>
+        </div>
+         <div>
+            <label for="email">Email:</label>
+            <input id="email" type="email" placeholder="e.g., soham@example.com" title="Required field" required>
+        </div>
+         <div>
+            <label for="Gender">Gender:</label>
+            <input id="Gender" type="Text" placeholder="Male" title="Required field" required>
+        </div>
+         <div>
+            <label for="mobile-number">Mobile Number:</label>
+            <input id="mobile-number" type="tel" placeholder="e.g., 9876543210" title="Required field" required>
+        </div>
+         <div>
+            <label for="dateofbirth">DOB:</label>
+            <input id="dateofbirth" type="date" placeholder="e.g., 20-11-2004" title="Required field" required>
+        </div>
+        </fieldset>
+        
+        <fieldset>
+            <p><b>Academic Information</b></p> <br>
+            <div>
+            <label for="10th Marks">10th Marks:</label>
+            <input id="10th Marks" type="number" placeholder="e.g., 85" title="Required field" required>
+        </div>
+        <div>
+            <label for="12th Marks">12th Marks:</label>
+            <input id="12th Marks" type="number" placeholder="e.g., 85" title="Required field" required>
+        </div>
+        <div>
+            <label for="Qual.">Qualification</label>
+            <input id="Qual." type="number" placeholder="e.g., 2026" title="Required field" required>
+        </div>
+        <div>
+            <label for="passing-year">Passing Year:</label>
+            <input id="passing-year" type="date" placeholder="e.g., 2026" title="Required field" required>
+        </div>
+        </fieldset>
+
+        <fieldset>
+             <p><b>Course Information</b></p> <br>
+            <legend>Course Information</legend>
+            <div>
+                <label for="course">Course:</label>
+                <select id="course" name="course" required>
+                    <option value="">Select a course</option>
+                    <option value="web-development">Web Development</option>
+                    <option value="software-testing">Software Testing</option>
+                    <option value="system-design">System Design</option>
+                </select>
+            </div>
+            <div>
+                <label for="branch">Branch:</label>
+                <input id="branch" name="branch" type="text" placeholder="e.g., Computer Science" required>
+            </div>
+            <div>
+                <label for="admission-type">Admission Type:</label>
+                <select id="admission-type" name="admission-type" required>
+                    <option value="">Select admission type</option>
+                    <option value="regular">Regular</option>
+                    <option value="lateral-entry">Lateral Entry</option>
+                </select>
+            </div>
+        </fieldset>
+
+        <fieldset>
+             <p><b>Address</b></p> <br>
+            <legend>Address</legend>
+            <div>
+                <label for="address">Address:</label>
+                <textarea id="address" name="address" rows="3" placeholder="Enter your full address" required></textarea>
+            </div>
+            <div>
+                <label for="city">City:</label>
+                <input id="city" name="city" type="text" placeholder="e.g., Pune" required>
+            </div>
+            <div>
+                <label for="state">State:</label>
+                <input id="state" name="state" type="text" placeholder="e.g., Maharashtra" required>
+            </div>
+            <div>
+                <label for="pincode">Pincode:</label>
+                <input id="pincode" name="pincode" type="text" inputmode="numeric" pattern="[0-9]{6}" placeholder="e.g., 411001" required>
+            </div>
+        </fieldset>
+
+        <fieldset>
+             <p><b>Other Information</b></p> <br>
+            <legend>Other Information</legend>
+            <div>
+                <label for="hobbies">Hobbies:</label>
+                <input id="hobbies" name="hobbies" type="text" placeholder="e.g., Reading, Music">
+            </div>
+            <div>
+                <label for="skills">Skills:</label>
+                <input id="skills" name="skills" type="text" placeholder="e.g., HTML, CSS, JavaScript">
+            </div>
+            <div>
+                <label for="documents">Documents:</label>
+                <input id="documents" name="documents" type="file" accept=".pdf,.jpg,.jpeg,.png">
+            </div>
+            <div>
+                <label for="declaration">Declaration:</label>
+                <label class="option" for="declaration">
+                    <input id="declaration" name="declaration" type="checkbox" required>
+                    I confirm that the information provided is correct.
+                </label>
+            </div>
+        </fieldset>
+<hr>
+
+       </form>
+</body>
+</html>
