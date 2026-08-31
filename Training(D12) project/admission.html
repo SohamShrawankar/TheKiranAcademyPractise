@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Kiran Academy Institute - Admission Form</title>
+</head>
+<body>
+  <header>
+    <h1>Student Admission Form</h1>
+    <nav>
+      <a href="index.html">Home</a> |
+      <a href="courses.html">Courses</a> |
+      <a href="gallery.html">Gallery</a> |
+      <a href="admission.html">Admission</a>
+    </nav>
+  </header>
+  <hr>
+
+  <main>
+    <form
+      action="#"
+      method="post"
+      autocomplete="on">
+
+      <!-- ================= PERSONAL DETAILS ================= -->
+      <fieldset>
+        <legend>Personal Information</legend>
+        <br>
+        <label for="fullname">Full Name:</label>
+        <input
+          type="text"
+          id="fullname"
+          name="fullname"
+          placeholder="Enter your full name"
+          required
+          autocomplete="name">
+        <br><br>
+
+        <label for="email">Email:</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="kiranacademy@gmail.com"
+          required
+          autocomplete="email">
+        <br><br>
+
+        <label for="password">Password:</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          placeholder="Enter password"
+          required>
+        <br><br>
+
+        <label for="phone">Mobile Number:</label>
+        <input
+          type="tel"
+          id="phone"
+          name="phone"
+          placeholder="10 digit mobile number"
+          pattern="[0-9]{10}"
+          required
+          autocomplete="tel">
+        <br><br>
+
+        <label for="age">Age:</label>
+        <input
+          type="number"
+          id="age"
+          name="age"
+          min="18" max="60"
+          step="1"
+          required>
+        <br><br>
+
+        <label>Gender:</label>
+        <input
+          type="radio"
+          id="male"
+          name="gender"
+          value="Male"
+          required>
+        <label for="male">Male</label>
+        <input
+          type="radio"
+          id="female"
+          name="gender"
+          value="Female">
+        <label for="female">Female</label>
+      </fieldset>
+      <br>
+
+      <!-- ================= COURSE DETAILS ================= -->
+      <fieldset>
+        <legend>Course Information</legend>
+        <br>
+        <label for="course">Select Course:</label>
+        <select
+          id="course"
+          name="course"
+          required>
+          <option value="">-- Select Course --</option>
+          <option value="java">Java Full Stack</option>
+          <option value="python">Python Full Stack</option>
+          <option value="web">Web Development</option>
+          <option value="testing">Software Testing</option>
+        </select>
+        <br><br>
+
+        <label>Skills:</label>
+        <br>
+        <input
+          type="checkbox"
+          id="html"
+          name="skills"
+          value="HTML">
+        <label for="html">HTML</label>
+        <br>
+        <input
+          type="checkbox"
+          id="java"
+          name="skills"
+          value="Java">
+        <label for="java">Java</label>
+        <br>
+        <input
+          type="checkbox"
+          id="sql"
+          name="skills"
+          value="SQL">
+        <label for="sql">SQL</label>
+        <br>
+        <input
+          type="checkbox"
+          id="testing"
+          name="skills"
+          value="Testing">
+        <label for="testing">Testing</label>
+        <br><br>
+
+        <label for="level">Current Skill Level:</label>
+        <input
+          type="range"
+          id="level"
+          name="level"
+          min="1"
+          max="10"
+          step="1" value="5">
+      </fieldset>
+      <br>
+
+      <!-- ================= DATE & TIME ================= -->
+      <fieldset>
+        <legend>Batch Information</legend>
+        <br>
+        <label for="joining">Joining Date:</label>
+        <input
+          type="date"
+          id="joining"
+          name="joining"
+          required>
+        <br><br>
+
+        <label for="time">Preferred Time:</label>
+        <input
+          type="time"
+          id="time"
+          name="time"
+          required>
+        <br><br>
+
+        <label for="orientation">Orientation Date & Time:</label>
+        <input
+          type="datetime-local"
+          id="orientation"
+          name="orientation">
+      </fieldset>
+      <br>
+
+      <!-- ================= OTHER HTML5 INPUTS ================= -->
+      <fieldset>
+        <legend>Additional Information</legend>
+        <br>
+        <label for="website">Portfolio Website:</label>
+        <input
+          type="url"
+          id="website"
+          name="website"
+          placeholder="https://thekiranacademy.com">
+        <br><br>
+
+        <label for="search">Search Interest:</label>
+        <input
+          type="search"
+          id="search"
+          name="search"
+          placeholder="Enter technology">
+        <br><br>
+
+        <label for="favcolor">Favorite Color:</label>
+        <input
+          type="color"
+          id="favcolor"
+          name="favcolor"
+          value="#000000">
+        <br><br>
+
+        <label for="resume">Upload Resume:</label>
+        <input
+          type="file"
+          id="resume"
+          name="resume"
+          required>
+        <br><br>
+
+        <label for="message">Address / Message:</label>
+        <br>
+        <textarea
+          id="message"
+          name="message"
+          rows="5"
+          cols="40"
+          placeholder="Enter your address or message"
+          required></textarea>
+      </fieldset>
+      <br>
+
+      <!-- ================= FIELD VALUES ================= -->
+      <fieldset>
+        <legend>Account Information</legend>
+        <br>
+        <label for="studentid">Student ID:</label>
+        <input
+          type="text"
+          id="studentid"
+          name="studentid"
+          value="ABC2026"
+          readonly>
+        <br><br>
+
+        <label for="center">Training Center:</label>
+        <input
+          type="text"
+          id="center"
+          name="center"
+          value="ABC Pune Center"
+          disabled>
+        <br><br>
+
+        <label for="discount">Discount:</label>
+        <input
+          type="number"
+          id="discount" name="discount"
+          value="10"
+          min="0"
+          max="50"
+          step="5">
+      </fieldset>
+      <br>
+
+      <!-- ================= FORM BUTTONS ================= -->
+      <input
+        type="submit"
+        value="Submit Application">
+      <input
+        type="reset"
+        value="Reset Form">
+      <button
+        type="button"
+        title="Click to display message"
+        onclick="alert('Thank you for visiting Kiran Academy Institute!')">
+        Click Me
+      </button>
+    </form>
+  </main>
+  <hr>
+
+  <footer>
+    <p>
+      &copy; 2026 Kiran Academy Training Institute
+    </p>
+  </footer>
+</body>
+</html>
