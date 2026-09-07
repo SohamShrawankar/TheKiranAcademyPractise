@@ -1,9 +1,12 @@
 body {
-  background-color: powderblue;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
 }
-h1 {
-  color: blue;
-}
-p {
-  color: red;
+
+.center {
+  width: 500px;
+  border: 3px solid black;
+  display: grid;
+  place-items: center;
 }
