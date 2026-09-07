@@ -3,17 +3,43 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FoodHub - Simple</title>
+<title>FoodParadise - Simple</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
 <style>
+  :root {
+    --cream: #fff8ed;
+    --ink: #3d2b24;
+    --coral: #e85d4a;
+    --coral-dark: #bf3f35;
+    --teal: #147d78;
+    --gold: #f2b84b;
+    --line: #f0d8c2;
+  }
+
   body {
     font-family: Arial, sans-serif;
-    color: #333;
+    color: var(--ink);
     margin: 0;
-    padding: 20px;
+    padding: 32px clamp(20px, 6vw, 90px);
+    background: linear-gradient(135deg, #fff8ed 0%, #fff1dc 52%, #e8f5f1 100%);
+    line-height: 1.6;
   }
 
   h1, h2, h3 {
-    color: #cc4400;
+    color: var(--coral-dark);
+  }
+
+  h1 {
+    color: var(--teal);
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    margin-bottom: 6px;
+  }
+
+  h2 {
+    color: var(--coral-dark);
+    margin-top: 28px;
   }
 
   p {
@@ -21,11 +47,20 @@
   }
 
   a {
-    color: #cc4400;
+    color: var(--teal);
+    font-weight: bold;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: var(--coral-dark);
+    text-decoration: underline;
   }
 
   hr {
-    margin: 30px 0;
+    border: 0;
+    border-top: 2px solid var(--line);
+    margin: 34px 0;
   }
 
   input, button {
@@ -34,26 +69,96 @@
     display: block;
     width: 100%;
     max-width: 300px;
+    box-sizing: border-box;
+  }
+
+  input {
+    border: 2px solid var(--gold);
+    border-radius: 6px;
+    background: #fffdf9;
+    color: var(--ink);
+  }
+
+  input:focus {
+    outline: 3px solid #f2b84b66;
+    border-color: var(--teal);
   }
 
   button {
-    background-color: #cc4400;
+    background-color: var(--coral);
     color: white;
     border: none;
+    border-radius: 6px;
     cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+  }
+
+  button:hover {
+    background-color: var(--coral-dark);
+    transform: translateY(-2px);
   }
 
   .card {
-    border: 1px solid #ccc;
-    padding: 15px;
+    border: 1px solid var(--line);
+    border-left: 6px solid var(--teal);
+    border-radius: 8px;
+    padding: 15px 20px;
     margin-bottom: 15px;
+    background: #ffffffcc;
+    box-shadow: 0 6px 18px #8c60451c;
+  }
+
+  .card h3 {
+    margin-top: 0;
+    color: var(--teal);
+  }
+
+  /* Responsive layout for smaller screens */
+  @media (max-width: 600px) {
+    body {
+      padding: 22px 16px;
+    }
+
+    h1 {
+      font-size: 2.25rem;
+    }
+
+    h2 {
+      font-size: 1.45rem;
+      line-height: 1.3;
+    }
+
+    input,
+    button {
+      max-width: 100%;
+    }
+
+    .card {
+      padding: 14px 16px;
+    }
+
+    hr {
+      margin: 26px 0;
+    }
+  }
+
+  @media (min-width: 768px) {
+    body {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .card {
+      max-width: 680px;
+    }
   }
 </style>
 </head>
 <body>
 
 <!-- HEADER -->
-<h1>FoodHub</h1>
+<h1>FoodParadise</h1>
 <p>
   <a href="#">Home</a> |
   <a href="#">Restaurants</a> |
@@ -68,7 +173,7 @@
 <hr>
 
 <!-- HERO -->
-<h2>Delicious Food Delivered to Your Doorstep</h2>
+<b><h2>Delicious Food Delivered to Your Doorstep</h2></b>
 <p>Order from your favourite restaurants near you.</p>
 <input type="text" placeholder="Search restaurants or dishes...">
 <button>Search</button>
@@ -147,18 +252,19 @@
 
 <!-- OFFER -->
 <h2>Get 30% OFF on Your First Order</h2>
-<p>Use coupon code: <strong>FOODHUB30</strong></p>
+<p>Use coupon code: <strong>FOODPARADISE30</strong></p>
 <button>Order Now</button>
 
 <hr>
 
 <!-- FOOTER -->
-<h3>FoodHub</h3>
+ <b> 
+<h3>FoodPARADISE</h3>
 <p>Bringing your favourite local restaurants to your door.</p>
 <p>Pune, Maharashtra, India</p>
 <p>Phone: +91 98765 43210</p>
-<p>Email: hello@foodhub.example</p>
+<p>Email: soham@foodhub.example</p>
 <p>&copy; 2026 FoodHub. All rights reserved.</p>
-
+</b>
 </body>
 </html>
