@@ -1,0 +1,12 @@
+.box{
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+}
+
+h1 {
+  width: fit-content;
+  margin: 0;
+  border: 2px solid brown;
+  padding: 5px;
+}
