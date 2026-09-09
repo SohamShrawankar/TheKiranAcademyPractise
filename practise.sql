@@ -64,3 +64,40 @@ delete from employee where employee_id = 5 ;
 select * from employee ; 
 
 alter table employee add column experience decimal(4,2) ;
+
+alter table employee modify column email  varchar(150) ;
+
+desc employee ;  
+
+
+create table product ( 
+product_id int ,
+product_name varchar(10) ,
+category varchar(10) ,
+price decimal(3,2) ,
+quantity int , 
+description text ,
+manufactured_date datetime ,
+is_available boolean 
+) ;
+
+INSERT INTO product (product_id, product_name, category, price, quantity, description, manufactured_date, is_available)
+VALUES
+(1, 'Notebook', 'Stationry', 2.50, 100, 'A4 size ruled notebook, 200 pages', '2024-01-15 09:00:00', TRUE),
+(2, 'Pen Blue', 'Stationry', 1.20, 250, 'Blue ink ball point pen', '2024-02-10 10:30:00', TRUE),
+(3, 'Eraser', 'Stationry', 0.50, 300, 'White rubber eraser', '2024-01-20 08:15:00', TRUE),
+(4, 'Scale', 'Stationry', 3.75, 150, 'Plastic 30cm ruler', '2024-03-05 11:00:00', FALSE),
+(5, 'Stapler', 'Office', 8.99, 60, 'Small desktop stapler', '2024-02-28 14:45:00', TRUE);
+
+alter table product modify column price int ;
+update  product set price = 50000 where product_id = 1 ;
+
+
+select * from product ; 
+delete from product where product_id = 4 ;
+
+alter table product add column brand varchar(50) ;
+
+UPDATE product SET brand = 'GUCCI' WHERE product_id = 1;
+
+update  product set is_available = 0 where product_id = 1;
