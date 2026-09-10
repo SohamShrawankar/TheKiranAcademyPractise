@@ -100,4 +100,43 @@ alter table product add column brand varchar(50) ;
 
 UPDATE product SET brand = 'GUCCI' WHERE product_id = 1;
 
-update  product set is_available = 0 where product_id = 1;
+update  product set is_available = 0 where product_id = 1; 
+
+
+create table customer (
+customer_id int primary key ,
+customer_name varchar(10) ,
+email varchar(15) 
+) ;
+
+create table orders (
+order_id int primary key ,
+customer_id int ,
+product varchar(10) ,
+amount float , 
+foreign key (customer_id) references customer(customer_id) 
+) ; 
+
+CREATE TABLE sales (
+    id INT PRIMARY KEY,
+    product VARCHAR(20)
+);
+INSERT INTO sales (id, product) VALUES
+(1, 'Pen'),
+(2, 'Pencil'),
+(3, 'Pen'),
+(4, NULL),
+(5, 'Eraser');
+
+select * from sales ;
+select count(distinct product) from sales ;
+
+select SUM(id) from sales ;
+
+alter table sales add column price int ;
+INSERT INTO sales (id, price) VALUES 
+(6, 300),
+(7, 400),
+(8, 500),
+(9, 600),
+(10, 700);
