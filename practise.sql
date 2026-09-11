@@ -140,3 +140,8 @@ INSERT INTO sales (id, price) VALUES
 (8, 500),
 (9, 600),
 (10, 700);
+
+select product from sales where product not like 'p%' ;
+
+
+select * from sales where price between  300 AND 700 ;
