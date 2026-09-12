@@ -63,12 +63,13 @@ select salary from employee where employee_id = 1 ;
 delete from employee where employee_id = 5 ;
 select * from employee ; 
 
-alter table employee add column experience decimal(4,2) ;
 
-alter table employee modify column email  varchar(150) ;
+alter table employee add column employee_DOB date ;
+alter table employee modify column salary decimal(6,2);
+alter table employee rename column employee_name to name ;
+alter table employee drop employee_DOB;
 
-desc employee ;  
-
+desc employee ;
 
 create table product ( 
 product_id int ,
@@ -144,4 +145,61 @@ INSERT INTO sales (id, price) VALUES
 select product from sales where product not like 'p%' ;
 
 
-select * from sales where price between  300 AND 700 ;
+select * from sales where price between  300 AND 700 ;  
+
+CREATE TABLE test_employee (    
+ id INT ,    
+ name VARCHAR(50),   
+ salary DECIMAL(10,2) 
+ ); 
+ 
+ 
+ 
+ /* SQL day 2 tasks */ 
+ 
+ 
+ 
+ INSERT INTO test_employee (id, name, salary) VALUES
+(1, 'Rahul Sharma', 45000.00),
+(2, 'Priya Patel', 52000.50),
+(3, 'Amit Verma', 38000.75),
+(4, 'Sneha Iyer', 61000.00),
+(5, 'Vikram Singh', 47500.25);
+
+select * from test_employee ; 
+
+SET SQL_SAFE_UPDATES = 0;
+
+delete from test_employee where id=3 ;
+truncate table test_employee ;
+drop table test_employee ;
+
+
+CREATE TABLE employees (
+    emp_id INT PRIMARY KEY,
+    name VARCHAR(50),
+    salary DECIMAL(10,2)
+);
+
+INSERT INTO employees (emp_id, name, salary) VALUES
+(101, 'soham Sharma', 45000.00),
+(102, 'advait Patel', 52000.00),
+(103, 'aryan Verma', 38000.00);
+
+start transaction;
+
+update employees set name = 'soham shrawankar' where emp_id = 101 ;
+update employees set name = 'advait kulkarni' where emp_id = 102 ;
+update employees set name = 'aryan tamhane' where emp_id = 103 ; 
+
+savepoint sp2 ;
+
+select * from employees ;
+
+rollback to sp2 ;
+
+
+
+
+
+
