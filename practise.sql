@@ -196,7 +196,7 @@ savepoint sp2 ;
 
 select * from employees ;
 
-rollback to sp2 ;
+rollback to sp1 ;
 
 
 
