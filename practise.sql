@@ -189,17 +189,36 @@ INSERT INTO employees (emp_id, name, salary) VALUES
 start transaction;
 
 update employees set name = 'soham shrawankar' where emp_id = 101 ;
-update employees set name = 'advait kulkarni' where emp_id = 102 ;
-update employees set name = 'aryan tamhane' where emp_id = 103 ; 
+update employees set name = 'advait kulkarni' where emp_id = 102 and emp_id = 103 ;
+
 
 savepoint sp2 ;
 
 select * from employees ;
 
-rollback to sp1 ;
+rollback to sp2 ;
 
+CREATE TABLE student1 (
+    student_id   INT PRIMARY KEY,
+    student_name VARCHAR(100) NOT NULL,
+    email        VARCHAR(100) UNIQUE,
+    age          INT CHECK (age >= 18),
+    city         VARCHAR(50) DEFAULT 'Pune',
+    course       VARCHAR(100) NOT NULL
+); 
 
+INSERT INTO student1 (student_id, student_name, email, age, city, course) VALUES
+(1, 'Rohan Deshmukh', 'rohan.deshmukh@example.com', 20, 'Pune', 'Computer Science'),
+(2, 'Sneha Kulkarni', 'sneha.kulkarni@example.com', 21, 'Pune', 'Information Technology'),
+(3, 'Aditya Sharma', 'aditya.sharma@example.com', 19, 'Mumbai', 'Mechanical Engineering'),
+(4, 'Priya Iyer', 'priya.iyer@example.com', 22, 'Mumbai', 'Electronics Engineering'),
+(5, 'Kunal Joshi', 'kunal.joshi@example.com', 20, 'Nashik', 'Civil Engineering'),
+(6, 'Anjali Patil', 'anjali.patil@example.com', 23, 'Nashik', 'Computer Science'),
+(7, 'Vikram Rao', 'vikram.rao@example.com', 21, 'Nagpur', 'Business Administration'),
+(8, 'Neha Wagh', 'neha.wagh@example.com', 24, 'Nagpur', 'Information Technology');
 
+insert into student1 values ( 1 , 'SohamDeshmukh', 'soham.deshmukh@example.com', 21, 'Nagpur', 'Electronics') ;
 
-
-
+delete from student1 where student_id = 8 ;
+select * from student1 ;
+update student1 set course = ' electornics ' where student_id = 5 ;
