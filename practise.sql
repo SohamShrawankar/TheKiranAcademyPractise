@@ -283,5 +283,39 @@ ADD dept VARCHAR(20);
 
 update employee set salary = salary + 3000 where dept = 'IT' ;
 
-delete from employee where emp_id = 8 ;
+delete from employee where emp_id = 8 ; 
+
+
+
+/*Scenario 3 Online Shopping System */ 
+
+create table product( 
+product_id int primary key ,
+product_name varchar(20) not null ,
+email varchar(30) UNIQUE ,
+price int CHECK (price > 0) ,
+quantity int DEFAULT 0 ,
+status varchar(15) default 'Available' ,
+category varchar(15) 
+);
+
+select * from product ;
+
+INSERT INTO product (product_id, product_name, price, quantity, status, category) VALUES
+(1, 'Laptop', 55000, 20, '', 'Electronics'),
+(2, 'Mobile', 25000, 50, 'Available', 'Electronics'),
+(3, 'Keyboard', 800, 100, 'Available', 'Accessories'),
+(4, 'Mouse', 500, 150, 'Available', 'Accessories'),
+(5, 'Monitor', 12000, 30, 'Available', 'Electronics'),
+(6, 'Headphones', 2500, 80, '','Accessories'),
+(7, 'Printer', 8000, 15, 'Available', 'Electronics'),
+(8, 'Tablet', 18000, 25, 'Available', 'Electronics'),
+(9, 'Webcam', 1500, 60, 'Available', 'Accessories'),
+(10, 'Speaker', 3000, 40,'', 'Accessories');
+
+update product set price=-500 where product_id=10;  
+
+delete from product where product_id = 10 ;
+
+
 
