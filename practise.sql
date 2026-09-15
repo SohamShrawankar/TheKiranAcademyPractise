@@ -222,3 +222,66 @@ insert into student1 values ( 1 , 'SohamDeshmukh', 'soham.deshmukh@example.com',
 delete from student1 where student_id = 8 ;
 select * from student1 ;
 update student1 set course = ' electornics ' where student_id = 5 ;
+
+select * from student1 order by student_id DESC ; 
+
+
+
+/* Scenario 2 Company Employee Management */
+
+create table department(
+dept_id int primary key ,
+dept_name varchar(20) not null unique 
+);
+
+insert into department (dept_id, dept_name) values (1 , 'IT'),
+(2 , 'HR'),(3 , 'Finance'),(4 , 'Marketing'),(5 , 'Sales') ;
+
+select * from department ;
+
+create table employee(
+emp_id int primary key ,
+emp_name varchar(20) not null ,
+email varchar(30) UNIQUE ,
+salary int check (salary >= 15000) ,
+city varchar(10) DEFAULT 'pune' ,
+dept_id int ,
+Foreign key(dept_id) references department(dept_id) 
+);
+
+INSERT INTO employee (emp_id, emp_name, email, salary, city, dept_id) VALUES
+(1, 'Amit Sharma', 'amit.sharma@company.com', 25000, 'Pune', 1),
+(2, 'Priya Singh', 'priya.singh@company.com', 32000, 'Mumbai', 2),
+(3, 'Rahul Verma', 'rahul.verma@company.com', 28000, 'Delhi', 3),
+(4, 'Sneha Patil', 'sneha.patil@company.com', 45000, 'Pune', 4),
+(5, 'Vikram Rao', 'vikram.rao@company.com', 21000, 'Nagpur', 5),
+(6, 'Ananya Iyer', 'ananya.iyer@company.com', 38000, 'Chennai', 1),
+(7, 'Karan Mehta', 'karan.mehta@company.com', 19000, 'Pune', 2),
+(8, 'Divya Nair', 'divya.nair@company.com', 52000, 'Kochi', 3),
+(9, 'Arjun Reddy', 'arjun.reddy@company.com', 30000, 'Hyderabad', 4),
+(10, 'Neha Kulkarni', 'neha.kulkarni@company.com', 27000, 'Pune', 5);
+
+insert into employee (emp_id,dept_id) values ( 111 , 99 ) ;
+
+update department set dept_name = 'IT' where dept_id = 3; 
+
+update employee set salary = salary + 5000 where emp_id = 5 ;
+select * from employee ;
+
+UPDATE employee
+SET dept = CASE dept_id
+    WHEN 1 THEN 'IT'
+    WHEN 2 THEN 'HR'
+    WHEN 3 THEN 'Finance'
+    WHEN 4 THEN 'Marketing'
+    WHEN 5 THEN 'Sales'
+END;
+SET SQL_SAFE_UPDATES = 0;
+
+ALTER TABLE employee
+ADD dept VARCHAR(20);
+
+update employee set salary = salary + 3000 where dept = 'IT' ;
+
+delete from employee where emp_id = 8 ;
+
