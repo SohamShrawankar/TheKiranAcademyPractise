@@ -432,4 +432,157 @@ LIMIT 5;
 select AVG(salary) from person_info ;
 
 
+/* ------------------------------------------------------------------------------ */
+
+/* Task 1 */ 
+create Database E_Learning ;
+use E_Learning ;
+
+
+create table Enrolment(
+enrollment_id int primary key ,
+student_id int not null ,
+course_id int not null ,
+enrollment_date date ,
+status varchar(10) DEFAULT 'Active' ,
+fees_paid int CHECK (fees_paid > 0)
+) ;
+
+INSERT INTO Enrolment (enrollment_id, student_id, course_id, enrollment_date, status, fees_paid) VALUES
+(1, 101, 201, '2025-01-10', 'Active', 10000),
+(2, 102, 202, '2025-01-11', 'Active',120000),
+(3, 103, 201, '2025-01-12', '', 10400),
+(4, 104, 203, '2025-01-13', 'Active', 10000),
+(5, 105, 204, '2025-01-14', 'Dropped', 14000),
+(6, 106, 202, '2025-01-15', 'Active', 10000),
+(7, 107, 205, '2025-01-16', 'Completed', 15000),
+(8, 108, 201, '2025-01-17', 'Active', 10000),
+(9, 109, 203, '2025-01-18', 'Active', 10000),
+(10, 110, 204, '2025-01-19', '', 120000);
+
+/* if entered a negative value in fees it shows  an error of out of range vale */ 
+alter table Enrolment modify column fees_paid int ; 
+
+update Enrolment set fees_paid = 50000 where enrollment_id = 1 ;
+
+update Enrolment set status = ' Completed ' where enrollment_id = 3 ;
+select * from Enrolment ; 
+
+SET sql_safe_updates = 0 ;
+delete from Enrolment where status = 'Dropped ';
+
+select * from Enrolment where status = 'Active' ;
+
+
+/*-------------------------------------------------------------------------------*/
+
+create database person ;
+use person ;
+
+
+create table person_info(
+person_id int primary key auto_increment ,
+person_name varchar(20) not null ,
+person_age int check ( person_age > 18 ) ,
+person_mobile varchar(15) UNIQUE not null ,
+person_email varchar(30) not null ,
+person_city varchar(30) DEFAULT 'pune' , 
+person_birth_datetime datetime not null ,
+joining_datetime datetime DEFAULT CURRENT_TIMESTAMP ,
+created_at datetime ,
+updated_at datetime
+);
+
+/* text values cannot have a default value */
+
+INSERT INTO person_info
+(person_name, person_age, person_mobile, person_email, person_city, person_birth_datetime)
+VALUES
+('Soham', 22, '9876543210', 'soham@gmail.com', 'Pune', '2004-09-16 10:30:00'),
+('Rahul', 25, '9876543211', 'rahul@gmail.com', 'Mumbai', '2001-05-12 09:20:00'),
+('Amit', 30, '9876543212', 'amit@gmail.com', 'Delhi', '1996-03-20 11:00:00'),
+('Rohan', 24, '9876543213', 'rohan@gmail.com', 'Nagpur', '2002-01-15 14:30:00'),
+('Karan', 27, '9876543214', 'karan@gmail.com', 'Nashik', '1999-07-25 08:15:00'),
+('Aditya', 23, '9876543215', 'aditya@gmail.com', 'Pune', '2003-11-10 16:45:00'),
+('Akash', 29, '9876543216', 'akash@gmail.com', 'Mumbai', '1997-08-18 12:10:00'),
+('Vivek', 26, '9876543217', 'vivek@gmail.com', 'Delhi', '2000-02-28 13:25:00'),
+('Nikhil', 21, '9876543218', 'nikhil@gmail.com', 'Nagpur', '2005-06-05 17:00:00'),
+('Yash', 28, '9876543219', 'yash@gmail.com', 'Pune', '1998-12-22 09:45:00');
+
+select * from person_info ;
+
+
+select person_name , person_city from person_info where person_name like 'S%' ;
+select * from person_info where person_age between 21 and 27 ;
+
+select * from person_info order by person_age ASC;
+select * from person_info order by person_name ASC;
+
+alter table person_info add column salary int;
+
+SET sql_safe_updates = 0 ;
+
+UPDATE person_info SET salary = 450000 WHERE person_name = 'Soham';
+UPDATE person_info SET salary = 700000 WHERE person_name = 'Rahul';
+UPDATE person_info SET salary = 1200000 WHERE person_name = 'Amit';
+UPDATE person_info SET salary = 600000 WHERE person_name = 'Rohan';
+UPDATE person_info SET salary = 900000 WHERE person_name = 'Karan';
+UPDATE person_info SET salary = 500000 WHERE person_name = 'Aditya';
+UPDATE person_info SET salary = 1050000 WHERE person_name = 'Akash';
+UPDATE person_info SET salary = 800000 WHERE person_name = 'Vivek';
+UPDATE person_info SET salary = 350000 WHERE person_name = 'Nikhil';
+UPDATE person_info SET salary = 950000 WHERE person_name = 'Yash'; 
+
+ALTER TABLE person_info
+DROP COLUMN created_at,
+DROP COLUMN updated_at;
+
+select * from person_info order by salary ASC;
+
+SELECT person_name, salary
+FROM person_info
+ORDER BY salary DESC
+LIMIT 5;
+
+select AVG(salary) from person_info ;
+
+select * from person_info where person_city != 'pune' ;
+
+select * from person_info where salary > 50000 ;
+
+
+SELECT *
+FROM person_info
+WHERE person_city IN ('Pune', 'Mumbai'); 
+
+SELECT *
+FROM person_info
+WHERE person_city IN ('Pune', 'Mumbai' , 'Nashik'); 
+
+SELECT *
+FROM person_info
+WHERE person_city NOT IN ('Pune', 'Mumbai'); 
+
+select * from person_info where salary between 800000 and 900000 ; 
+
+
+select * from person_info where person_name like "A%" ;
+select * from person_info where person_name like "%n" ; 
+select * from person_info where person_name like "%an%" ;
+select * from person_info where person_name like "%a%" ;
+select * from person_info where person_name like "S%" ;
+select * from person_info where person_name like "____" ;
+
+select * from person_info where person_city = 'Pune' and salary > 450000 ;
+select * from person_info where person_city = 'Mumbai' and salary < 1110000 ;
+
+select * from person_info where person_city = 'Pune' or salary > 700000 ;
+select * from person_info where person_city = 'Pune' and salary between 450000 and 800000 ;
+
+
+
+
+
+
+
 
