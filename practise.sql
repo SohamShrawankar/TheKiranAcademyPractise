@@ -580,7 +580,40 @@ select * from person_info where person_city = 'Pune' or salary > 700000 ;
 select * from person_info where person_city = 'Pune' and salary between 450000 and 800000 ;
 
 
+/*--------------------------------------------------------------------------------------------*/
 
+CREATE TABLE orders (
+    order_id INT PRIMARY KEY,
+    customer_name VARCHAR(50),
+    city VARCHAR(50),
+    product VARCHAR(50),
+    quantity INT,
+    price DECIMAL(10,2),
+    order_date DATE
+);
+
+INSERT INTO orders VALUES
+(1, 'Rahul', 'Pune', 'Laptop', 1, 50000, '2024-01-15'),
+(2, 'Priya', 'Mumbai', 'Mouse', 3, 500, '2024-02-10'),
+(3, 'Rahul', 'Pune', 'Keyboard', 2, 1500, '2024-02-20'),
+(4, 'Amit', 'Delhi', 'Laptop', 1, 55000, '2024-03-05'),
+(5, 'Priya', 'Mumbai', 'Monitor', 1, 8000, '2024-03-18'),
+(6, 'Sneha', 'Pune', 'Mouse', 5, 500, '2024-04-01'),
+(7, 'Rahul', 'Pune', 'Monitor', 2, 8000, '2024-04-22'),
+(8, 'Amit', 'Delhi', 'Keyboard', 1, 1500, '2024-05-10'),
+(9, 'Sneha', 'Pune', 'Laptop', 1, 52000, '2024-05-15'),
+(10, 'Priya', 'Mumbai', 'Keyboard', 4, 1500, '2024-06-01'),
+(11, 'Amit', 'Delhi', 'Mouse', 2, 500, '2024-06-12'),
+(12, 'Rahul', 'Pune', 'Mouse', 1, 500, '2024-06-25');
+
+select * from orders ;
+
+SELECT customer_name, SUM(quantity * price) AS total_value
+FROM orders
+WHERE order_date > '2024-02-01'
+GROUP BY customer_name
+HAVING SUM(quantity * price) > 10000
+ORDER BY total_value DESC;
 
 
 
