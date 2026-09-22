@@ -616,6 +616,26 @@ HAVING SUM(quantity * price) > 10000
 ORDER BY total_value DESC;
 
 
+/*---------------------------------------------------------------*/
+
+create database practise ;
+use practise ;
+
+create table std_info (
+std_id int ,
+std_name varchar(10) 
+) ;
+
+insert into std_info values (1 , 'Soham');
+
+create table course (
+course_id int ,
+course_name varchar(20) 
+);
+
+insert into course values(101 , 'System design');
+select * from std_info cross join course ;
+
 
 
 
