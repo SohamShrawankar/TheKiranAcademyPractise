@@ -815,5 +815,347 @@ SELECT
 FROM customers c
 INNER JOIN orders o 
     ON c.customer_id = o.customer_id;
+    
+/*task8*/
+SELECT 
+    c.first_name,
+    c.last_name ,
+    o.order_date
+FROM customers c
+INNER JOIN orders o 
+    ON c.customer_id = o.customer_id
+    WHERE order_date > '2026-02-01';
+    
+/*task10*/
+    SELECT 
+    c.first_name,
+    c.last_name 
+FROM customers c
+INNER JOIN orders o 
+    ON c.customer_id = o.customer_id
+    WHERE state = 'maharashtra';
+
+/*task11*/
+    SELECT 
+    c.first_name,
+    c.last_name ,
+    o.order_id ,
+    o.order_status ,
+    o.order_date
+FROM customers c
+INNER JOIN orders o 
+    ON c.customer_id = o.customer_id
+    WHERE payment_method = 'upi';
+    
+/*task16*/  
+SELECT 
+    o.order_id,
+    oi.quantity,
+    oi.item_total
+FROM orders o
+RIGHT JOIN order_items oi 
+    ON o.order_id = oi.order_id;
+
+/*task17*/ 
+SELECT 
+    o.order_id,
+    oi.unit_price,
+    oi.discount
+FROM orders o
+RIGHT JOIN order_items oi 
+    ON o.order_id = oi.order_id;
+
+/*task18*/
+SELECT 
+    o.order_id,
+    oi.product_id
+FROM orders o
+inner JOIN order_items oi 
+    ON o.order_id = oi.order_id
+    where quantity > 1;
+
+/*task22*/
+SELECT DISTINCT
+    p.product_name,
+    p.brand,
+    oi.unit_price
+FROM products p
+INNER JOIN order_items oi
+    ON p.product_id = oi.product_id;
+
+
+/*task25*/
+SELECT 
+    p.product_name,
+    p.category ,
+    oi.unit_price ,
+    oi.item_total
+FROM products p
+inner JOIN order_items oi 
+    ON p.product_id = oi.product_id ;
+
+/*task26*/
+
+SELECT 
+    CONCAT(c.first_name, ' ', c.last_name) AS customer_name,
+    o.order_id,
+    oi.product_id,
+    oi.quantity
+FROM customers c
+JOIN orders o ON c.customer_id = o.customer_id
+JOIN order_items oi ON o.order_id = oi.order_id;
+
+/*task26*/
+SELECT 
+    CONCAT(c.first_name, ' ', c.last_name) AS customer_name,
+    o.order_id,
+    oi.product_id,
+    oi.quantity
+FROM customers c
+JOIN orders o ON c.customer_id = o.customer_id
+JOIN order_items oi ON o.order_id = oi.order_id;
+
+
+SELECT 
+    c.first_name,
+    c.last_name,
+    o.order_id,
+    oi.product_id,
+    oi.quantity
+FROM customers c
+INNER JOIN orders o ON c.customer_id = o.customer_id
+INNER JOIN order_items oi ON o.order_id = oi.order_id;
+
+/*task27*/
+SELECT 
+    CONCAT(c.first_name, ' ', c.last_name) AS customer_name,
+    o.order_date,
+    oi.product_id,
+    oi.item_total
+FROM customers c
+JOIN orders o ON c.customer_id = o.customer_id
+JOIN order_items oi ON o.order_id = oi.order_id;
+
+
+
+/*task28*/
+SELECT 
+    CONCAT(c.first_name, ' ', c.last_name) AS customer_name,
+    o.order_status,
+    oi.item_status
+FROM customers c
+JOIN orders o ON c.customer_id = o.customer_id
+JOIN order_items oi ON o.order_id = oi.order_id;
+
+
+/*task28*/
+SELECT 
+    CONCAT(c.first_name, ' ', c.last_name) AS customer_name,
+    o.payment_method,
+    oi.product_id,
+    oi.quantity
+FROM customers c
+JOIN orders o ON c.customer_id = o.customer_id
+JOIN order_items oi ON o.order_id = oi.order_id;
+
+/*task30*/
+SELECT 
+    CONCAT(c.first_name, ' ', c.last_name) AS customer_name,
+    c.city,
+    o.order_id,
+    oi.product_id
+FROM customers c
+JOIN orders o ON c.customer_id = o.customer_id
+JOIN order_items oi ON o.order_id = oi.order_id
+WHERE o.order_status = 'Delivered';
+
+/*task31*/
+SELECT 
+    CONCAT(c.first_name, ' ', c.last_name) AS customer_name,
+    c.email,
+    o.order_date,
+    oi.item_total
+FROM customers c
+JOIN orders o ON c.customer_id = o.customer_id
+JOIN order_items oi ON o.order_id = oi.order_id
+WHERE o.total_amount > 10000;
+
+/*task32*/
+SELECT 
+    CONCAT(c.first_name, ' ', c.last_name) AS customer_name,
+    o.order_status,
+    oi.product_id,
+    oi.quantity
+FROM customers c
+JOIN orders o ON c.customer_id = o.customer_id
+JOIN order_items oi ON o.order_id = oi.order_id
+WHERE o.order_status = 'Shipped';
+
+
+
+/*task33*/
+SELECT 
+    CONCAT(c.first_name, ' ', c.last_name) AS customer_name,
+    c.state,
+    oi.product_id
+FROM customers c
+JOIN orders o ON c.customer_id = o.customer_id
+JOIN order_items oi ON o.order_id = oi.order_id
+WHERE c.state = 'Maharashtra';
+
+/*task34*/
+SELECT 
+    CONCAT(c.first_name, ' ', c.last_name) AS customer_name,
+    o.order_date,
+    oi.product_id,
+    oi.unit_price
+FROM customers c
+JOIN orders o ON c.customer_id = o.customer_id
+JOIN order_items oi ON o.order_id = oi.order_id
+WHERE o.order_date > '2026-02-01';
+
+/*task35*/
+SELECT 
+    CONCAT(c.first_name, ' ', c.last_name) AS customer_name,
+    o.order_id,
+    oi.quantity,
+    oi.discount
+FROM customers c
+JOIN orders o ON c.customer_id = o.customer_id
+JOIN order_items oi ON o.order_id = oi.order_id;
+
+/*task47*/
+SELECT 
+    c.customer_id,
+    CONCAT(c.first_name, ' ', c.last_name) AS customer_name,
+    SUM(o.total_amount) AS total_spent
+FROM customers c
+JOIN orders o ON c.customer_id = o.customer_id
+GROUP BY c.customer_id, c.first_name, c.last_name;
+
+/*task51*/
+SELECT 
+    CONCAT(c.first_name, ' ', c.last_name) AS customer_name,
+    c.email,
+    o.order_id,
+    p.product_name,
+    oi.quantity
+FROM customers c
+JOIN orders o ON c.customer_id = o.customer_id
+JOIN order_items oi ON o.order_id = oi.order_id
+JOIN products p ON oi.product_id = p.product_id;
+
+/*task52*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
