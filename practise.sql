@@ -1046,6 +1046,152 @@ JOIN order_items oi ON o.order_id = oi.order_id
 JOIN products p ON oi.product_id = p.product_id;
 
 /*task52*/
+SELECT 
+    CONCAT(c.first_name, ' ', c.last_name) AS customer_name,
+    c.email,
+    c.city ,
+    o.order_date ,
+    p.product_name,
+    p.category,
+    oi.item_total
+FROM customers c
+JOIN orders o ON c.customer_id = o.customer_id
+JOIN order_items oi ON o.order_id = oi.order_id
+JOIN products p ON oi.product_id = p.product_id;
+
+/*task5*/
+SELECT 
+    CONCAT(c.first_name, ' ', c.last_name) AS customer_name,
+    o.order_date ,
+    p.product_name,
+    p.category,
+    oi.item_total
+FROM customers c
+JOIN orders o ON c.customer_id = o.customer_id
+JOIN order_items oi ON o.order_id = oi.order_id
+JOIN products p ON oi.product_id = p.product_id
+WHERE item_total > 20000 ;
+
+/*task57*/
+SELECT 
+    CONCAT(c.first_name, ' ', c.last_name) AS customer_name,
+    c.city,
+    p.product_name,
+    p.category
+FROM customers c
+JOIN orders o ON c.customer_id = o.customer_id
+JOIN order_items oi ON o.order_id = oi.order_id
+JOIN products p ON oi.product_id = p.product_id
+WHERE c.state = 'Maharashtra';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
