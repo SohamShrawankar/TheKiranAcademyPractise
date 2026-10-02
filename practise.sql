@@ -1084,7 +1084,51 @@ JOIN order_items oi ON o.order_id = oi.order_id
 JOIN products p ON oi.product_id = p.product_id
 WHERE c.state = 'Maharashtra';
 
+/*-------------------------------------------------------*/
 
+create database students ;
+use students ;
+
+create table students(
+id int primary key ,
+name varchar(10) ,
+course varchar(10)
+);
+
+create table student_log(
+student_id int primary key ,
+action varchar(10)
+);
+
+DELIMITER //
+
+CREATE TRIGGER log_student_insert
+AFTER INSERT ON students
+FOR EACH ROW
+BEGIN
+    INSERT INTO student_log (student_id, action)
+    VALUES (NEW.id, 'INSERT');
+END //
+
+DELIMITER ;
+
+
+delimiter //
+create trigger log_course_update
+after update 
+on students
+for each row
+begin 
+   insert into student_log( id,action)
+   values (new.id , 'UPDATE') ;
+end//
+
+delimiter ;
+
+drop trigger log_course_update;
+update students set name = 'advait' where id = 1 ;
+
+select * from student_log;
 
 
 
