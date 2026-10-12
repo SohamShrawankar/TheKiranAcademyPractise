@@ -41,3 +41,17 @@ public class Main {
     }
 }
 
+/*-------------------------CONSTRUCTORS IN JAVA ---------------------------*/ 
+public class Main {
+
+    // Constructor goes INSIDE the class
+    public Main() {
+        System.out.println("Hello World");
+    }
+
+    public static void main(String[] args) {
+        Main obj = new Main();   // calls the constructor, prints "Hello World"
+    }
+}
+
+
