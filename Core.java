@@ -42,16 +42,19 @@ public class Main {
 }
 
 /*-------------------------CONSTRUCTORS IN JAVA ---------------------------*/ 
-public class Main {
+class Main {
+    String name ;
+    int emp_id ;
 
-    // Constructor goes INSIDE the class
-    public Main() {
-        System.out.println("Hello World");
+    Main(String name, int emp_id) {
+        this.name = name;
+        this.emp_id = emp_id;
     }
-
     public static void main(String[] args) {
-        Main obj = new Main();   // calls the constructor, prints "Hello World"
+        Main obj = new Main("soham",101);
+   System.out.println(obj.name + " " + obj.emp_id);
     }
 }
+
 
 
