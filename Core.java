@@ -98,6 +98,7 @@ public class Account {
 
 
 /*-------------------------------TASK1 14-10-2026----------------------------*/
+Task 1
 package JavaPractiseTask1;
 
 public class Student {
@@ -122,6 +123,51 @@ public class Student {
         System.out.println("The student age is : " + st.age);
         System.out.println("The student grade is : " + st.grade);
         System.out.println("The student Exam status is : " + st.Exam_status);
+    }
+}
+
+Task 2 
+ 
+package JavaPractiseTask1;
+
+public class Employee {
+    int emp_id;
+    String name;
+    float salary;
+    int allowances;
+
+    float HRA(float salary) {
+        return salary * 0.2f;
+    }
+
+    float DA(float salary) {
+        return salary * 0.1f;
+    }
+
+    float gross_salary(float salary) {
+        float grossSalary = HRA(salary) + DA(salary) + salary;
+        return grossSalary;
+    }
+
+    public static void main(String[] args) {
+
+        Employee emp = new Employee();
+
+        emp.emp_id = 1;
+        emp.name = "Soham";
+        emp.salary = 50000;
+        emp.allowances = 10000;
+
+        float hra = emp.HRA(emp.salary);
+        float da = emp.DA(emp.salary);
+        float gross = emp.gross_salary(emp.salary);
+
+        System.out.println("Employee ID: " + emp.emp_id);
+        System.out.println("Employee Name: " + emp.name);
+        System.out.println("Basic Salary: " + emp.salary);
+        System.out.println("HRA: " + hra);
+        System.out.println("DA: " + da);
+        System.out.println("Gross Salary: " + gross);
     }
 }
 
