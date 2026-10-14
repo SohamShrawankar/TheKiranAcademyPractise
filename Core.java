@@ -171,3 +171,32 @@ public class Employee {
     }
 }
 
+Task  4
+ package JavaPractiseTask1;
+
+public class Calculator {
+
+    int addition(int a , int b){
+        return a + b ;
+    }
+    int subtraction(int a , int b){
+        return a - b ;
+    }
+    int multiplication(int a , int b){
+        return a * b ;
+    }
+    float division(int a , int b){
+        return a / b ;
+    }
+
+    public static void main(String[] args) {
+
+        Calculator calc = new Calculator();
+
+        System.out.println("The addition of 2 elements is : " + calc.addition(20,10));
+        System.out.println("The subtraction of 2 elements is : " + calc.subtraction(20,10));
+        System.out.println("The multiplication of 2 elements is : " + calc.multiplication(20,10));
+        System.out.println("The division of 2 elements is : " + calc.division(20,10));
+        
+    }
+}
