@@ -97,5 +97,31 @@ public class Account {
 }
 
 
+/*-------------------------------TASK1 14-10-2026----------------------------*/
+package JavaPractiseTask1;
 
+public class Student {
+    String std_name ;
+    int roll_number ;
+    int age ;
+    float percentage;
+    float grade ;
+    String Exam_status ;
+
+    public static void main(String[] args){
+        Student st = new Student();
+        st.std_name = "soham";
+        st.roll_number = 1;
+        st.age = 22;
+        st.grade = 85;
+        st.Exam_status = "Pass";
+
+
+        System.out.println("The student name is : " + st.std_name);
+        System.out.println("The student roll number is : " + st.roll_number);
+        System.out.println("The student age is : " + st.age);
+        System.out.println("The student grade is : " + st.grade);
+        System.out.println("The student Exam status is : " + st.Exam_status);
+    }
+}
 
