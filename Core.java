@@ -200,3 +200,30 @@ public class Calculator {
         
     }
 }
+
+/*--------------------------------METHOD OVERRRIDING-------------------------------------*/
+
+ package Package1;
+
+public class MethodOverriding {
+
+   class Animal {
+        public void eat() {
+            System.out.println("Animal eat");
+        }
+    }
+
+    class Dog extends Animal {
+        @Override
+        public void eat() {
+            System.out.println("Dog eat");
+        }
+    }
+
+    public static void main(String[] args) {
+        MethodOverriding ob = new MethodOverriding();
+             Animal a = ob.new Dog();
+             a.eat();
+
+    }
+}
