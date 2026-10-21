@@ -259,6 +259,22 @@ public class Calculator {
     }
 }
 
-/*--------------------------------------Saved changes---------------------*/
+/*--------------------------------------Inner Class---------------------*/
 
-Java compilation
+
+public class OuterClass {
+    private int outerVar = 100;
+
+    // Member inner class
+    public class InnerClass {
+        public void display() {
+            System.out.println("Outer variable: " + outerVar);
+        }
+    }
+
+    public static void main(String[] args) {
+        OuterClass outer = new OuterClass();
+        OuterClass.InnerClass inner = outer.new InnerClass();
+        inner.display();
+    }
+}
