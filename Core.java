@@ -278,3 +278,22 @@ public class OuterClass {
         inner.display();
     }
 }
+
+/*--------------------------------------Method Local Inner Class---------------------*/
+
+public class OuterClass {
+    public void display() {
+        class InnerClass {
+            public void print() {
+                System.out.println("Method Local Inner Class");
+            }
+        }
+        InnerClass inner = new InnerClass();
+        inner.print();
+    }
+
+    public static void main(String[] args) {
+        OuterClass outer = new OuterClass();
+        outer.display();
+    }
+}
