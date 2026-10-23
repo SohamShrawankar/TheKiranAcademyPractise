@@ -298,5 +298,34 @@ public class OuterClass {
     }
 }
 
-/*---------------------JAVA UPDATES------------------------*/
- 
+/*---------------------JAVA INTERFACES------------------------*/
+ package Package2;
+
+class A {
+    interface Payment {
+        void pay();
+    }
+
+    class UPI implements Payment {
+        public void pay() {
+            System.out.println("Paid using UPI");
+        }
+    }
+
+    class Card implements Payment {
+        public void pay() {
+            System.out.println("Paid using Card");
+        }
+    }
+    public static void main(String[] args){
+        A a = new A();
+
+        A.UPI upi = a.new UPI();
+        upi.pay();
+
+        A.Card card = a.new Card();
+        card.pay();
+
+    }
+}
+
