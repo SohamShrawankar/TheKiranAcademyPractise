@@ -1,2 +1,2 @@
 # TheKiranAcademyPractise.
-Made for practising Frontend Development Fundamentals .
+Made for practising Frontend Development Fundamentals , Programming logic and concepts .
