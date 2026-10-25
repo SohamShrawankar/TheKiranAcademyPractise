@@ -379,5 +379,26 @@ public class ElectricityBill {
 }
 
 /*---------------------------JAVA PRACTISE 25----------------------------*/
+package Package3;
+
+import java.util.Scanner;
+public class Authentication {
+
+    public static void main(String[] args) {
+
+        Scanner sc= new Scanner(System.in);
+        String Username = sc.next();
+
+        String Password = sc.next();
+
+        if(Username.equals("Soham@_2004") &&
+                Password.equals("Soham123") ){
+            System.out.println("You have successfully logged in");
+        }
+        else{
+            System.out.println("Authentication Failed");
+        }
+    }
+}
 
 
