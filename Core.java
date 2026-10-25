@@ -328,6 +328,56 @@ class A {
 
     }
 }
+
+/*-------------------------------------------CONDITIONAL STATEMENTS PROGRAMS------------------------------*/
+package Package3;
+import java.util.Scanner;
+
+public class BankData {
+
+    public static void main(String[] args){
+        float BankBalance;
+        float withdraw;
+
+        Scanner input = new Scanner(System.in);
+        BankBalance = input.nextFloat();
+        withdraw = input.nextFloat();
+
+        if(BankBalance >= withdraw){
+            System.out.println("You have withdrawed " + withdraw + " Amount left in the bank " + (BankBalance - withdraw));
+        }
+        else{
+            System.out.println("Insufficient funds");
+        }
+    }
+}
+
+package Package3;
+import java.util.Scanner;
+public class ElectricityBill {
+    public static void main(String[] args) {
+
+        float Bill;
+
+        Scanner input = new Scanner(System.in);
+        float Units_Consumed =input.nextFloat();
+
+
+        if(Units_Consumed <= 100){
+            Bill = Units_Consumed * 5;
+            System.out.println("The total bill is " + Bill);
+        }
+        else if(Units_Consumed > 100 && Units_Consumed <= 200){
+            Bill = Units_Consumed * 7;
+            System.out.println("The total bill is " + Bill);
+        }
+        else{
+            Bill = Units_Consumed * 10;
+            System.out.println("The total bill is " + Bill);
+        }
+    }
+}
+
 /*---------------------------JAVA PRACTISE 25----------------------------*/
 
 
