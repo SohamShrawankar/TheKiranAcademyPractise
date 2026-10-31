@@ -48,4 +48,34 @@ public class Arrays {
         }
 
 }
-s
+/*-------------------- Array Largest -------------------*/
+
+package Package2;
+import java.util.ArrayList ;
+import java.util.Collections ;
+import java.util.Scanner;
+
+public class Arrays {
+        public static void main(String[] args) {
+            Scanner sc = new Scanner(System.in);
+            ArrayList<Integer> arr = new ArrayList<>();
+
+            int n = sc.nextInt();
+
+            for (int i = 0; i < n; i++) {
+                arr.add(sc.nextInt());
+            }
+            //Largest Element
+            int highest = arr.get(0);
+            for (int i = 0; i < arr.size(); i++) {
+
+                if (arr.get(i) > highest) {
+                    highest = arr.get(i);
+                }
+
+            }
+            System.out.println(arr);
+            System.out.println(highest);
+        }
+}
+
