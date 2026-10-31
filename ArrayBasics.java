@@ -78,4 +78,28 @@ public class Arrays {
             System.out.println(highest);
         }
 }
+/*-------------------------------EVEN & ODD-----------------------------*/
+package Package2;
+
+public class EvenOdd {
+
+    public static void main(String[] args) {
+
+       int Even = 0;
+       int Odd = 0 ;
+
+       int[] arr = {1,2,3,4,5,6,7,8,9,10};
+
+       for(int i=0 ; i<arr.length ; i++){
+           if(arr[i]%2==0){
+               Even++;
+           }
+           else{
+               Odd++;
+           }
+       }
+        System.out.println("Total Even numbers: " + Even );
+        System.out.println("Total Odd numbers: " + Odd );
+    }
+}
 
