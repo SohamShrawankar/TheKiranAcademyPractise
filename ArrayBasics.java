@@ -103,4 +103,23 @@ public class EvenOdd {
     }
 }
 
-/*-------------------------JAVA UPDATES 23-11-2026-------------------------*/
+/*-------------------------Array Practise-------------------------*/
+package DSApackage;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class ArrayList1 {
+    public static void main(String[] args){
+
+        Scanner sc = new Scanner(System.in) ;
+        ArrayList<String> arr = new ArrayList<String>();
+
+        int n = sc.nextInt();
+        for(int i=0 ; i<n ; i++){
+            arr.add(sc.next());
+        }
+        arr.set(3,"Tauhid") ;
+    System.out.print(arr);
+        System.out.println(arr.size());
+    }
+}
