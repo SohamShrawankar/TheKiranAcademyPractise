@@ -61,3 +61,34 @@ public class StackArray {
    }
 }
 
+/*-----------Stack using collection framework---------------------*/ 
+
+import java.util.Stack;
+
+public class StackExample {
+
+    public static void main(String[] args) {
+
+        Stack<Integer> stack = new Stack<>();
+
+        // Push elements
+        stack.push(10);
+        stack.push(20);
+        stack.push(30);
+
+        // Display Stack
+        System.out.println(stack);
+
+        // Peek
+        System.out.println("Top: " + stack.peek());
+
+        // Pop
+        System.out.println("Removed: " + stack.pop());
+
+        // Check whether Stack is empty
+        System.out.println(stack.isEmpty());
+
+        // Stack size
+        System.out.println(stack.size());
+    }
+}
